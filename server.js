@@ -21,7 +21,7 @@ mongoose
   );
 
 // Setting up port with express js
-const employeeRoute = require("../backend/routes/user.route");
+const userRoute = require("./routes/user.route");
 const app = express();
 app.use(express.json());
 app.use(
@@ -32,7 +32,7 @@ app.use(
 app.use(cors());
 app.use(express.static(path.join(__dirname, "dist/Angular-Test")));
 app.use("/", express.static(path.join(__dirname, "dist/Angular-Test")));
-app.use("/api", employeeRoute);
+app.use("/api", userRoute);
 
 // Create port
 const port = process.env.PORT || 3000;
